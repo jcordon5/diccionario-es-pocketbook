@@ -6,6 +6,8 @@ Un diccionario de español **gratis, completo y bien maquetado** para lectores P
 
 **[⬇ Descargar la última versión](../../releases/latest)** · un solo archivo `.dic` de unos 18 MB
 
+> Las definiciones salen de **[reader.dict](https://www.reader-dict.com/download/es)**, que también ofrece **versiones oficiales para PocketBook** de todos sus idiomas. Si este diccionario te resulta útil, apoyar ese proyecto es la mejor forma de que siga existiendo.
+
 | | |
 |---|---|
 | Palabras con definición | 110.616 |
