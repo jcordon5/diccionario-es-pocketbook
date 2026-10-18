@@ -1,0 +1,22 @@
+name: Diccionario mensual
+on:
+  schedule:
+    - cron: "0 6 5 * *"   # el día 5 de cada mes, tras la actualización de reader.dict
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with: { go-version: "1.25" }
+      - run: ./build.sh
+      - name: Publicar versión
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: |
+          tag="v$(date +%Y.%m.%d)"
+          gh release create "$tag" dist/diccionario-es.dic \
+            --title "Diccionario de español · $(date +%d/%m/%Y)" \
+            --notes "Wikcionario en español actualizado a $(date +%d/%m/%Y). Instálalo copiando el archivo a system/dictionaries."

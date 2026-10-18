@@ -1,0 +1,9 @@
+src/
+dist/
+build/
+meta-es/
+tools/
+docker/
+muestra.*
+*.xdxf
+.DS_Store

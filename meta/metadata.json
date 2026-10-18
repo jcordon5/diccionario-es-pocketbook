@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "specialProject": 0,
+  "name": "Diccionario de español",
+  "localeFrom": "es",
+  "localeTo": "es",
+  "description": "Definiciones del Wikcionario en español (CC BY-SA 4.0), procesadas por reader.dict y maquetadas para PocketBook.",
+  "category": "Universal",
+  "provider": "Wikcionario",
+  "set": ""
+}
