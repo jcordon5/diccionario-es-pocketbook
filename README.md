@@ -2,7 +2,9 @@
 
 Un diccionario de español **gratis, completo y bien maquetado** para lectores PocketBook. Mantén pulsada una palabra mientras lees y tendrás su definición, como en un Kindle.
 
-**[⬇ Descargar la última versión](../../releases/latest)** · un solo archivo `.dic` de unos 21 MB
+![La misma búsqueda en un PocketBook Verse Pro Color: a la izquierda el diccionario de español que trae el lector, a la derecha este](docs/antes-despues.png)
+
+**[⬇ Descargar la última versión](../../releases/latest)** · un solo archivo `.dic` de unos 18 MB
 
 | | |
 |---|---|
@@ -20,7 +22,8 @@ Así que hemos hecho uno nuevo a partir del Wikcionario, que sí es libre, cuida
 ## Cómo se ve
 
 ```
-pequeño  [peˈkeɲo]
+pequeño
+[peˈkeɲo]
 adjetivo
 1. De tamaño reducido, menor a lo común o normal.
      a) Sinónimos: chico, corto, escaso, reducido.
@@ -30,7 +33,7 @@ adjetivo
 Etimología: Voz expresiva.
 ```
 
-- La palabra en negrita y la pronunciación en gris.
+- La pronunciación en gris, debajo de la palabra (que el lector ya pone como título).
 - La categoría en cursiva (*sustantivo*, *verbo*…).
 - Las acepciones numeradas, con la materia en cursiva (*Mamíferos.*, *Física.*).
 - Sinónimos debajo de su acepción y etimología al final, en gris.

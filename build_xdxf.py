@@ -128,8 +128,9 @@ def article(word, pron, forms, body, headwords=frozenset()):
     p = Body()
     p.feed(html.unescape(body).replace("&nbsp;", " ").replace(" ", " "))
     p.flush()
-    head = f"<b>{esc(word)}</b>" + (f'  <c c="gray">{esc(pron)}</c>' if pron else "")
-    return f"<ar><k>{esc(word)}</k><def>" + "".join(to_html(l) for l in [head] + p.lines) + "</def></ar>\n", p.lines
+    # el lector ya pone la palabra como título: aquí solo la pronunciación
+    head = [f'<c c="gray">{esc(pron)}</c>'] if pron else []
+    return f"<ar><k>{esc(word)}</k><def>" + "".join(to_html(l) for l in head + p.lines) + "</def></ar>\n", p.lines
 
 
 GRAY = "#6b6b6b"
@@ -168,7 +169,7 @@ def summary(lines):
 
 def pointer(form, targets):
     """Entrada corta para formas sin entrada propia: fuimos -> ser, perros -> perro."""
-    body = [f"<b>{esc(form)}</b>"]
+    body = []
     for word, (pos, first) in targets:
         body.append(f"<i>forma de</i> <b>{esc(word)}</b>" + (f"  {pos}" if pos else ""))
         if first:
