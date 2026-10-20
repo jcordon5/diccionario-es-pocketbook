@@ -133,7 +133,8 @@ def article(word, pron, forms, body, headwords=frozenset()):
     return f"<ar><k>{esc(word)}</k><def>" + "".join(to_html(l) for l in head + p.lines) + "</def></ar>\n", p.lines
 
 
-GRAY = "#6b6b6b"
+# gris oscuro: en las pantallas a color (Kaleido) un gris medio se ve muy claro
+GRAY = "#3c3c3c"
 
 
 def to_html(line):
@@ -151,7 +152,7 @@ def _to_html(line):
         return f'<div style="margin-left:1.4em;color:{GRAY}">{line.replace("</span>", "", 1) if line.endswith("</span>") else line}</div>'
     if line.startswith("<i>") and "</i>" in line and not line.startswith("<i>Etim"):
         return f'<div style="margin-top:6px;color:{GRAY}">{line}</div>'
-    if line.startswith('<span style="color:#6b6b6b"><i>Etimología'):
+    if line.startswith(f'<span style="color:{GRAY}"><i>Etimología'):
         return f'<div style="margin-top:6px">{line}</div>'
     return f"<div>{line}</div>"
 
@@ -173,7 +174,7 @@ def pointer(form, targets):
     for word, (pos, first) in targets:
         body.append(f"<i>forma de</i> <b>{esc(word)}</b>" + (f"  {pos}" if pos else ""))
         if first:
-            body.append(f'<c c="gray">{first}</c>')
+            body.append(first)
     return f"<ar><k>{esc(form)}</k><def>" + "".join(to_html(l) for l in body) + "</def></ar>\n"
 
 
